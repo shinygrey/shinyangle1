@@ -1,1 +1,63 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+.justify-content-center {
+	-ms-flex-pack: center!important;
+	justify-content: center!important;
+}
+
+.row{
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.col2{
+	flex: 0 0 16.666667%;
+	max-width: 16.666667%;
+}
+
+.col3{
+	flex: 0 0 25%;
+	max-width: 25%;
+}
+
+.col4{
+	flex: 0 0 33.333333%;
+	max-width: 33.333333%;
+}
+
+.col5{
+	flex: 0 0 41.666667%;
+	max-width: 41.666667%;
+}
+
+.col6{
+	flex: 0 0 50%;
+	max-width: 50%;
+}
+
+.col7{
+	flex: 0 0 58.333333%;
+	max-width: 58.333333%;
+}
+
+.col8{
+	flex: 0 0 66.666667%;
+	max-width: 66.666667%;
+}
+
+.col9{
+	flex: 0 0 75%;
+	max-width: 75%;
+}
+
+.col10{
+	flex: 0 0 83.333333%;
+	max-width: 83.333333%;
+}
+
+.col11{
+	flex: 0 0 91.666667%;
+	max-width: 91.666667%;
+}
