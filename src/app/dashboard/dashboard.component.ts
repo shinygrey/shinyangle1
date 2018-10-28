@@ -16,8 +16,7 @@ export class DashboardComponent implements OnInit {
 		this.getProjects();
 	}
 
-	getHeroes(): void {
-	this.portfolio1.getProjects()
-		.subscribe(projects => this.projects = projects.slice(1, 5));
+	getProjects(): void {
+	this.portfolio1.getProjects().subscribe(projects => this.projects = projects.slice(1, 5));
 	}
 }
