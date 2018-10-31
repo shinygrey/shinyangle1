@@ -1,26 +1,28 @@
-<h2>My links</h2>
-<div class="row websites">
-	<div class="col4">
-	<ul>
-		<li *ngFor="let website of websites"
-			[class.selected]="website === selectedWebsite"
-			(click)="onSelect(website)">
-			<span class="badge">{{website.id}}</span>{{website.name}}
-		</li>
-	</ul>
-	</div>
-	<div class="col4" *ngIf="selectedWebsite">
-		<h2>{{selectedWebsite.name | uppercase}} Details</h2>
-		<div><span>id: </span>{{selectedWebsite.id}}</div>
-		<div>
-			<label>name:
-				<input [(ngModel)]="selectedWebsite.name" placeholder="name">
-			</label>
-			<br/>
-			<label>url:
-				<input [(ngModel)]="selectedWebsite.url" placeholder="url">
-			</label>
-			<p><a href="{{selectedWebsite.url}}">{{selectedWebsite.url}}</a></p>
-		</div> 
+<div class="application">
+	<h2>My links</h2>
+	<div class="row websites">
+		<div class="col4">
+		<ul>
+			<li *ngFor="let website of websites"
+				[class.selected]="website === selectedWebsite"
+				(click)="onSelect(website)">
+				<span class="badge">{{website.id}}</span>{{website.name}}
+			</li>
+		</ul>
+		</div>
+		<div class="col4" *ngIf="selectedWebsite">
+			<h2>{{selectedWebsite.name | uppercase}} Details</h2>
+			<div><span>id: </span>{{selectedWebsite.id}}</div>
+			<div>
+				<label>name:
+					<input [(ngModel)]="selectedWebsite.name" placeholder="name">
+				</label>
+				<br/>
+				<label>url:
+					<input [(ngModel)]="selectedWebsite.url" placeholder="url">
+				</label>
+				<p><a href="{{selectedWebsite.url}}">{{selectedWebsite.url}}</a></p>
+			</div> 
+		</div>
 	</div>
 </div>

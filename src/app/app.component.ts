@@ -6,14 +6,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 	title = 'The Shiny Grey Angular Portfolio';
-	showHeroes = true;
+	showTourofheroes = true;
 	showConfig = true;
 	showDownloader = true;
 	showUploader = true;
 	showSearch = true;	
 	showWebsites = true;
 
-	toggleHeroes() { this.showHeroes = !this.showHeroes; }
+	toggleWebsites() { this.showWebsites = !this.showWebsites; }
+	toggleHeroes() { this.showTourofheroes = !this.showTourofheroes; }
 	toggleConfig() { this.showConfig = !this.showConfig; }
 	toggleDownloader() { this.showDownloader = !this.showDownloader; }
 	toggleUploader() { this.showUploader = !this.showUploader; }
