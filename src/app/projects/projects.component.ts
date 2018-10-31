@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Project } from '../project';
+import { Project } from '../projects/project';
 import { PortfolioService } from '../portfolio.service';
 
 @Component({
 	selector: 'app-projects',
-	templateUrl: './projects.component.html',
-	styleUrls: ['./projects.component.css']
+	templateUrl: './projects.component.html'
 })
 export class ProjectsComponent implements OnInit {
 	projects: Project[];

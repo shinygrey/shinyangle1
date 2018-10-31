@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Project } from '../project';
+import { Project } from '../projects/project';
 import { PortfolioService } from '../portfolio.service';
 
 @Component({
 	selector: 'app-dashboard',
-	templateUrl: './dashboard.component.html',
-	styleUrls: ['./dashboard.component.css']
+	templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent implements OnInit {
 	projects: Project[] = [];
@@ -17,6 +16,6 @@ export class DashboardComponent implements OnInit {
 	}
 
 	getProjects(): void {
-	this.portfolio1.getProjects().subscribe(projects => this.projects = projects.slice(1, 5));
+		this.portfolio1.getProjects().subscribe(projects => this.projects = projects.slice(1, 5));
 	}
 }

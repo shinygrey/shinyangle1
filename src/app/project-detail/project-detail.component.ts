@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common'; 
-import { Project } from '../project';
+import { Project } from '../projects/project';
 import { PortfolioService } from '../portfolio.service';
 
 @Component({
 	selector: 'app-project-detail',
-	templateUrl: './project-detail.component.html',
-	styleUrls: ['./project-detail.component.css']
+	templateUrl: './project-detail.component.html'
 })
 export class ProjectDetailComponent implements OnInit {
 	project: Project;

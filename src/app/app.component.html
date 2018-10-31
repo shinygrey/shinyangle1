@@ -21,6 +21,20 @@ Welcome to {{ title }}!
 </div>
 <div class="row justify-content-center">
 <div class="col8">
-<router-outlet></router-outlet>
+<div>
+	<input type="checkbox" id="heroes" [checked]="toggleHeroes" (click)="toggleHeroes()">
+	<label for="heroes">Heroes</label>
+</div>
+
+<app-messages></app-messages>
+
+<div class="application"><app-websites></app-websites></div>
 </div>
 </div>
+
+<footer>
+</footer>
+
+<footer class="row justify-content-center">
+	<p>Greg Hurlock 2018</p>
+</footer>

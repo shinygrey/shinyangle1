@@ -1,4 +1,4 @@
-import { Project } from './project';
+import { Project } from './projects/project';
 
 export const PROJECTDATA: Project[] = [
   { id: 11, name: 'Outdoor Classroom' },
@@ -6,5 +6,5 @@ export const PROJECTDATA: Project[] = [
   { id: 13, name: 'Cylinder Tool' },
   { id: 14, name: 'Picnic Table' },
   { id: 15, name: 'Circle Bench' },
-  { id: 16, name: 'Cylinder tool' }
+  { id: 16, name: 'Solenoid' }
 ];
