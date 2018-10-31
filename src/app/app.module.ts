@@ -12,8 +12,8 @@ import { MessagesComponent } from './messages/messages.component';
 import { MessageService }       from './message.service';
 import { AppRoutingModule } from './app-routing.module';
 import { TwitterComponent } from './twitter/twitter.component';
-import { WebsitesComponent ) from './websites/websites.component.ts';
-import { WebsitesService ) from './websites/websites.service.ts';
+import { WebsitesComponent }      from './websites/websites.component';
+import { WebsitesService } from './websites/websites.service';
 
 @NgModule({
 declarations: [

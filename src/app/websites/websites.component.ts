@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Website } from '../website';
+import { Website } from './website';
 import { WebsitesService } from './websites.service';
 
 @Component({
@@ -22,7 +22,7 @@ export class WebsitesComponent implements OnInit {
 	onSelect(website: Website): void {
 		this.selectedWebsite = website;
 	}
-	
+
 	getWebsites(): void {
 		this.weblinksdetails.getWebsites().subscribe(dataThroughObservable => this.websites = dataThroughObservable);
 	}
