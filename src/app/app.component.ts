@@ -10,7 +10,8 @@ export class AppComponent {
 	showConfig = true;
 	showDownloader = true;
 	showUploader = true;
-	showSearch = true;
+	showSearch = true;	
+	showWebsites = true;
 
 	toggleHeroes() { this.showHeroes = !this.showHeroes; }
 	toggleConfig() { this.showConfig = !this.showConfig; }

@@ -9,7 +9,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectSearchComponent } from './project-search/project-search.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { MessagesComponent } from './messages/messages.component';
-import { MessageService }       from './message.service';
+import { MessageService }       from './messages/message.service';
 import { AppRoutingModule } from './app-routing.module';
 import { TwitterComponent } from './twitter/twitter.component';
 import { WebsitesComponent }      from './websites/websites.component';

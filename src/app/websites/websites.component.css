@@ -1,4 +1,9 @@
 /* HeroesComponent's private CSS styles */
+
+.websites > div{
+	margin:2em;
+}
+
 .selected {
 	background-color: #CFD8DC !important;
 	color: white;
