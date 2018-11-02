@@ -12,7 +12,7 @@ export class RequestService{
 	
 	constructor(private http: HttpClient){
 		
-		http.get(window.location.origin + '/backend').subscribe(backendEvent => {console.log("something happened")});
+		http.get(window.location.origin + '/backend').subscribe(backendEvent => {console.log(backendEvent)});
 		
 		
 		/*.pipe(map((response: Response) => response.json())).subscribe(backendEvent => {
