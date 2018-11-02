@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { HttpErrorHandler }     from './http-error-handler.service';
-import { ProjectsComponent } from './projects/projects.component';
-import { ProjectSearchComponent } from './project-search/project-search.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService }       from './messages/message.service';
+import { PackageSearchComponent } from './package-search/package-search.component';
 import { TwitterComponent } from './twitter/twitter.component';
+import { TwitterService } from './twitter/twitter.service';
 import { WebsitesComponent }      from './websites/websites.component';
 import { WebsitesService } from './websites/websites.service';
 import { TourofheroesComponent } from './tourofheroes/tourofheroes.component';
@@ -19,22 +21,23 @@ declarations: [
 	AppComponent,
 	HeroesComponent,
 	HeroDetailComponent,
-	ProjectsComponent,
-	ProjectSearchComponent,
 	MessagesComponent,
 	TwitterComponent,
 	WebsitesComponent,
+	PackageSearchComponent,
 	TourofheroesComponent
 ],
-  imports: [
+	imports: [
 	BrowserModule,
-	FormsModule
-  ],
+	FormsModule,
+	HttpClientModule //import after Browser
+	],
 	providers: [
 		HttpErrorHandler,
 		MessageService,
+		TwitterService,
 		WebsitesService
 	],
-  bootstrap: [AppComponent]
+	bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule{}

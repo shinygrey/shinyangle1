@@ -22,15 +22,33 @@
 
 <div class="row justify-content-center">
 <div class="col10">
-<div>
-	<input type="checkbox" id="websites" [checked]="toggleWebsites" (click)="toggleWebsites()">
-	<label for="websites"><h3 style="display:inline;">Websites</h3></label>
-	<input type="checkbox" id="heroes" [checked]="toggleHeroes" (click)="toggleHeroes()">
-	<label for="heroes"><h3 style="display:inline;">Heroes</h3></label>
+<div class="row">
+
+	<div>
+		<input type="checkbox" id="twitter" [checked]="toggleTwitter" (click)="toggleTwitter()">	
+		<label for="twitter"><h3 style="display:inline;">twitter</h3></label>
+	</div>
+
+
+
+	<div>
+		<input type="checkbox" id="websites" [checked]="toggleWebsites" (click)="toggleWebsites()">	
+		<label for="websites"><h3 style="display:inline;">Websites</h3></label>
+	</div>
+	<div>
+		<input type="checkbox" id="heroes" [checked]="toggleHeroes" (click)="toggleHeroes()">
+		<label for="heroes"><h3 style="display:inline;">Heroes</h3></label>
+	</div>
+	<div>
+		<input type="checkbox" id="packagesearch" [checked]="togglePackageSearch" (click)="togglePackageSearch()">
+		<label for="packagesearch"><h3 style="display:inline;">PackageSearch</h3></label>
+	</div>
 </div>
 
 <app-messages></app-messages>
+<app-twitter *ngIf="showTwitter"></app-twitter>
 <app-websites *ngIf="showWebsites"></app-websites>
+<app-package-search *ngIf="showPackageSearch"></app-package-search>
 <app-tourofheroes *ngIf="showTourofheroes"></app-tourofheroes>
 
 

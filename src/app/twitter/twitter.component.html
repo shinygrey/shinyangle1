@@ -1,0 +1,10 @@
+<div class="application">
+<h3>Twitter</h3>
+	<button (click)="showTwitterApiResponse()">getResponse</button>
+	<div *ngIf="headers">
+		Response headers:
+		<ul>
+			<li *ngFor="let header of headers">{{header}}</li>
+		</ul>
+	</div>
+</div>
