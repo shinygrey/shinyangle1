@@ -2,13 +2,6 @@ import { Component } from '@angular/core';
 import { TweetData, TwitterService } from './twitter.service';
 import { MessageService } from '../messages/message.service';
 
-	if (typeof process != "undefined") {
-		var gregvar = process.env.GREG_VAR;
-	}
-	else {
-		console.log("process is undefined");
-	}
-
 @Component({
 	selector: 'app-twitter',
 	templateUrl: './twitter.component.html',
