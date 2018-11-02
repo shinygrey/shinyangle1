@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HttpErrorHandler }     from './http-error-handler.service';
+import { RequestService }       from './request.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService }       from './messages/message.service';
 import { PackageSearchComponent } from './package-search/package-search.component';
@@ -34,6 +35,7 @@ declarations: [
 	],
 	providers: [
 		HttpErrorHandler,
+		RequestService,
 		MessageService,
 		TwitterService,
 		WebsitesService

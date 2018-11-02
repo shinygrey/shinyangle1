@@ -7,9 +7,9 @@ app.get('/*', (req,res)=>{
 });
 
 app.get('/backend', (req, res) => {
-	res.json({url: process.env.GREG_VAR})
+	res.json({gregvar: process.env.GREG_VAR})
 });
 
 app.listen(process.env.PORT || 8080, ()=>{
-	console.log('Server started' + process.env.GREG_VAR);
+	console.log('Server started');
 })
