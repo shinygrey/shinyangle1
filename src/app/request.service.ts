@@ -8,11 +8,9 @@ import { map } from 'rxjs/operators';
 })
 export class RequestService{
 	
-
-	
 	constructor(private http: HttpClient){
 		
-		var greg = http.get(window.location.origin + '/cats').subscribe(backendEvent => {console.log(backendEvent)});
+		http.get(window.location.origin + '/backend').subscribe(backendEvent => {console.log(backendEvent)});
 
 		/*
 		http.get(window.location.origin + '/backend').subscribe(backendEvent => {console.log(backendEvent)});
