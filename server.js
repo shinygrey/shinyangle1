@@ -4,16 +4,6 @@ const app =express();
 
 app.use(express.static('./dist/shinyangle1'));
 
-app.get('/backend', function(req, res){
-	res.send("ohai")  //process.env.GREG_VAR
-});
-
-app.route('/cats').get((req, res) => {
-	res.send({
-		cats: [{ name: 'lilly' }, { name: 'lucy' }]
-	});
-}
-
 app.get('/*', (req,res)=>{
 	res.sendFile(path.join(__dirname,'/dist/shinyangle1/index.html'));
 });
