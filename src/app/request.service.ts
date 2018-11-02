@@ -3,19 +3,24 @@ import { HttpClient,HttpRequest,HttpHeaders } from '@angular/common/http';
 import { Observable, of, fromEvent } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-const clicksource = fromEvent(document, 'click'); //create observable that emits click events
-const clickexample = clicksource.pipe(map(event => `Event time: ${event.timeStamp}`)); //map to string with given event timestamp
-clickexample.subscribe(val => console.log(val));
-
 @Injectable({
 	providedIn: 'root'
 })
 export class RequestService{
-	constructor(private http: HttpClient){
+	
 
-		http.get(window.location.origin + '/backend').map((response: Response) => response.json()).subscribe(backendEvent => {sessionStorage.setItem('greg_var', backendEvent.url);
-		});
-		console.log(sessionStorage.getItem('greg_var'));
+	
+	constructor(private http: HttpClient){
+		
+		http.get(window.location.origin + '/backend').subscribe(backendEvent => {console.log("something happened")});
+		
+		
+		/*.pipe(map((response: Response) => response.json())).subscribe(backendEvent => {
+			if(typeof backendEvent == "undefined"){this.testmessage = "not working";}else{this.testmessage = "working";}			
+			sessionStorage.setItem('greg_var', backendEvent);
+		});*/
+		
+		
 	}
 
 	dataUrl = "https://api.twitter.com/1.1/statuses/user_timeline.json"
@@ -33,4 +38,10 @@ export class RequestService{
 			'Content-Length': '76',
 			'Host':'api.twitter.com'
 	};
+	
+	clickEventsForTesting(){
+		var clicksource = fromEvent(document, 'click'); //create observable that emits click events
+		var clickexample = clicksource.pipe(map(event => `Event time: ${event.timeStamp}`)); //map to string with given event timestamp
+		clickexample.subscribe(val => console.log(val));
+	}
 }

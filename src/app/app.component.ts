@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { RequestService } from './request.service';
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html'
 })
 export class AppComponent {
+		constructor(private request: RequestService){}
 	title = 'The Shiny Grey Angular Portfolio';
 	showTourofheroes = true;
 	showTwitter = true;
