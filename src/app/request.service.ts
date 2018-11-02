@@ -12,15 +12,16 @@ export class RequestService{
 	
 	constructor(private http: HttpClient){
 		
+		var greg = http.get(window.location.origin + '/cats').subscribe(backendEvent => {console.log(backendEvent)});
+
+		/*
 		http.get(window.location.origin + '/backend').subscribe(backendEvent => {console.log(backendEvent)});
 		
 		
-		/*.pipe(map((response: Response) => response.json())).subscribe(backendEvent => {
+		.pipe(map((response: Response) => response.json())).subscribe(backendEvent => {
 			if(typeof backendEvent == "undefined"){this.testmessage = "not working";}else{this.testmessage = "working";}			
 			sessionStorage.setItem('greg_var', backendEvent);
 		});*/
-		
-		
 	}
 
 	dataUrl = "https://api.twitter.com/1.1/statuses/user_timeline.json"
