@@ -8,25 +8,16 @@ import { map } from 'rxjs/operators';
 })
 export class RequestService{
 	
-	constructor(private http: HttpClient){
-		
-		http.get(window.location.origin + '/backend').subscribe(backendEvent => {console.log(backendEvent)});
-
-		/*
-		http.get(window.location.origin + '/backend').subscribe(backendEvent => {console.log(backendEvent)});
-		
-		
-		.pipe(map((response: Response) => response.json())).subscribe(backendEvent => {
-			if(typeof backendEvent == "undefined"){this.testmessage = "not working";}else{this.testmessage = "working";}			
-			sessionStorage.setItem('greg_var', backendEvent);
-		});*/
-	}
+	constructor(private http: HttpClient){}
 
 	dataUrl = "https://api.twitter.com/1.1/statuses/user_timeline.json"
-	requestMethod: string = "GET";
-	getData(){
-		return this.http.get(this.dataUrl);
+
+	
+	getBackEndVariable() {
+		return this.http.get(angleheroestour.herokuapp.com + '/backend',{responseType: 'text'});
 	}
+	
+	
 	
 	httpOptions = {
 			'Accept':'*/*',

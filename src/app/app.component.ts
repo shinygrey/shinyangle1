@@ -6,11 +6,16 @@ import { RequestService } from './request.service';
 	templateUrl: './app.component.html'
 })
 export class AppComponent {
-		constructor(private request: RequestService){}
+	constructor(private requests: RequestService){}
+	
+	ngOnInit(){
+		this.requests.getBackEndVariable().subscribe((data: string) => console.log(data + " get happened"));
+	}
+		
 	title = 'The Shiny Grey Angular Portfolio';
 	showTourofheroes = true;
 	showTwitter = true;
-	showPackageSearch = true;	
+	showPackageSearch = true;
 	showWebsites = true;
 
 	toggleWebsites() { this.showWebsites = !this.showWebsites; }

@@ -8,7 +8,6 @@ app.get('/*', (req,res)=>{
 	res.sendFile(path.join(__dirname,'/dist/shinyangle1/index.html'));
 });
 
-
 app.get('/backend', function(req, res){
 	res.send("ohai")  //process.env.GREG_VAR
 });
