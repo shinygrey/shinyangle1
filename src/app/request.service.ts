@@ -14,7 +14,7 @@ export class RequestService{
 
 	
 	getBackEndVariable() {
-		return this.http.get(angleheroestour.herokuapp.com + '/backend',{responseType: 'text'});
+		return this.http.get('https://angleheroestour.herokuapp.com/' + '/backend',{responseType: 'text'});
 	}
 	
 	
