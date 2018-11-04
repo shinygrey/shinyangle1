@@ -7,9 +7,10 @@ import { RequestService } from './request.service';
 })
 export class AppComponent {
 	constructor(private requests: RequestService){}
-	
+	thedata;
 	ngOnInit(){
-		this.requests.getBackEndVariable().subscribe((data: string) => console.log(data));
+		this.requests.getBackEndVariable().subscribe((data: string) => console.log("app.component.ts says: GET successful\ndata as follows:\n" + data));
+		
 	}
 		
 	title = 'The Shiny Grey Angular Portfolio';
@@ -23,3 +24,10 @@ export class AppComponent {
 	toggleTwitter() { this.showTwitter = !this.showTwitter; }
 	togglePackageSearch() { this.showPackageSearch = !this.showPackageSearch; }
 }
+
+
+
+
+
+
+
