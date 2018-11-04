@@ -24,7 +24,7 @@ export class TwitterComponent{
 			this.headers = keys.map(key => `${key}: ${resp.headers.get(key)}`);
 			this.tweet = { ... resp.body };
 		});*/
-	}
+
 }
 
 /*
