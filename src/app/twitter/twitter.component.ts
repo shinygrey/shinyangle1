@@ -12,19 +12,18 @@ export class TwitterComponent{
 	headers: string[];
 	tweet :TweetData;
 	
-		
-	constructor(private tweetService1: TwitterService){}
+	constructor(private requestTweets1: TwitterService){}
 	
-	showTweets(){
-		this.tweetService1.getTweets().subscribe((data: TweetData) => this.tweet = { ...data });
+	ngOnInit(){
+		this.requestTweets1.getTwitterData('User Timeline').subscribe((data: string) => console.log("twitter.component says: done getTwitterData\n"+data));
 	}
 	
-	showTwitterApiResponse(){
-		this.tweetService1.getTwitterApiResponse().subscribe(resp => {
+	/*showTwitterApiResponse(){
+		this.requestTweets1.getTwitterApiResponse().subscribe(resp => {
 			const keys = resp.headers.keys();
 			this.headers = keys.map(key => `${key}: ${resp.headers.get(key)}`);
 			this.tweet = { ... resp.body };
-		});
+		});*/
 	}
 }
 
@@ -37,12 +36,5 @@ this.userfollowers_count = undefined;
 this.userfriends_count = undefined;
 this.userlisted_count = undefined;
 
-tweetData['created_at']
-tweetData['text']
-tweetData['user']['name']
-tweetData['user']['screen_name']
-tweetData['user']['followers_count']
-tweetData['user']['friends_count']
-tweetData['user']['listed_count']
 */
 

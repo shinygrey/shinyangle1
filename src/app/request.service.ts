@@ -9,25 +9,10 @@ import { map } from 'rxjs/operators';
 export class RequestService{
 	
 	constructor(private http: HttpClient){}
-
-	dataUrl = "https://api.twitter.com/1.1/statuses/user_timeline.json"
-
 	
 	getBackEndVariable() {
-		return this.http.get('https://angleheroestour.herokuapp.com' + '/backend',{responseType: 'text'});
+		return this.http.get(window.location.origin + '/backend',{responseType: 'text'});
 	}
-	
-	
-	
-	httpOptions = {
-			'Accept':'*/*',
-			'Connection':'close',
-			'User-Agent':'OAuth gem v0.4.4',
-			'Content-Type':'application/x-www-form-urlencoded',
-			'Authorization': 'OAuth oauth_consumer_key="'+encodeURIComponent('key')+'", oauth_nonce="'+encodeURIComponent('key')+'", oauth_signature="'+encodeURIComponent('key')+'", oauth_signature_method="HMAC-SHA1", oauth_timestamp='+Date.now()+', oauth_token="'+encodeURIComponent('key')+'", oauth_version="1.0"',
-			'Content-Length': '76',
-			'Host':'api.twitter.com'
-	};
 	
 	clickEventsForTesting(){
 		var clicksource = fromEvent(document, 'click'); //create observable that emits click events

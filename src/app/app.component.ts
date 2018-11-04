@@ -9,7 +9,7 @@ export class AppComponent {
 	constructor(private requests: RequestService){}
 	
 	ngOnInit(){
-		this.requests.getBackEndVariable().subscribe((data: string) => console.log(data + " get happened"));
+		this.requests.getBackEndVariable().subscribe((data: string) => console.log(data));
 	}
 		
 	title = 'The Shiny Grey Angular Portfolio';
