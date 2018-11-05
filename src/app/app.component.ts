@@ -12,9 +12,8 @@ export class AppComponent {
 		this.requests.getBackEndVariable().subscribe((data: string) => {
 			console.log("app.component.ts says: GET successful\n");
 			try{
-				var jsonData = JSON.parse(data);
+				var jsonData = JSON.parse(data);  //jsonData.Results[0].Id
 				this.jsonDataFromBackend = jsonData;
-				//jsonData.Results[0].Id
 			}catch(error){console.error(error);}
 		});
 	}
@@ -30,10 +29,3 @@ export class AppComponent {
 	toggleTwitter() { this.showTwitter = !this.showTwitter; }
 	togglePackageSearch() { this.showPackageSearch = !this.showPackageSearch; }
 }
-
-
-
-
-
-
-
