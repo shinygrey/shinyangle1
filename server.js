@@ -7,8 +7,6 @@ const fs = require("fs");
 const express= require('express');
 const app =express();
 
-const {RestRequest} = require("./restrequest");
-
 const envGreg = process.env.GREG_VAR;
 const envRequestProtocol = process.env.REQUEST_PROTOCOL;
 const envRequestUrl = process.env.REQUEST_URL;
