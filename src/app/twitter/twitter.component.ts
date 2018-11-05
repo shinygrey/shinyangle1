@@ -15,7 +15,7 @@ export class TwitterComponent{
 	constructor(private requestTweets1: TwitterService){}
 	
 	ngOnInit(){
-		this.requestTweets1.getTwitterData('User Timeline').subscribe((data: string) => console.log("twitter.component says: done getTwitterData\n"+data));
+		/*this.requestTweets1.getTwitterData('User Timeline').subscribe((data: string) => console.log("twitter.component says: done getTwitterData\n"+data));*/
 	}
 	
 	/*showTwitterApiResponse(){
