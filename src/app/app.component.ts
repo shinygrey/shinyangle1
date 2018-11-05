@@ -10,7 +10,7 @@ export class AppComponent {
 	jsonDataFromBackend;
 	ngOnInit(){
 		this.requests.getBackEndVariable().subscribe(
-			(data: string) => console.log("app.component.ts says: GET successful\n")
+			(data: string) => console.log("app.component.ts says: GET successful\n");
 			try{
 				this.jsonDataFromBackend = JSON.parse(data);
 			}catch(error){console.error(error);}
