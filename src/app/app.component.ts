@@ -13,7 +13,7 @@ export class AppComponent {
 			console.log("app.component.ts says: GET successful\n");
 			try{
 				var jsonData = JSON.parse(data);
-				this.jsonDataFromBackend = jsonData);
+				this.jsonDataFromBackend = jsonData;
 				//jsonData.Results[0].Id
 			}catch(error){console.error(error);}
 		});
