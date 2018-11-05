@@ -52,21 +52,21 @@ var RestRequest = (function () {
 	return aRequest;
 }());
 
-var northwind = new RestRequest("https://reqres.in/api/users");
+var request1 = new RestRequest(envRequestUrl);
 
 app.use('/backend',function(req, res, next){	
 	
-	var restResponse = northwind.rawdata;
+	var jsonString = request1.rawdata;
 	var allowedFromConfig = envAllowedSites;
 	var allowedOrigins = allowedFromConfig.split(",");
 	
 	if((req.get('Referer') == "https://shinyangle-staging.herokuapp.com/" && req.get('Origin') == undefined)){
-		res.send("success(local):\n" + "restresponse: \n"+ restResponse + "raw: \n" + northwind.rawdata);
+		res.send(jsonString);
 		next();	
 	}else if(allowedOrigins.includes(req.get('Origin'))){
 		res.header("Access-Control-Allow-Origin", req.get('Origin'));
 		res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-		res.send("success(cross):\n" + restResponse);
+		res.send(jsonString);
 		next();
 	}else{
 		res.send('not accessible');
