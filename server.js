@@ -32,7 +32,11 @@ var RestRequest = (function () {
 		protocol.get(requestUrl, (res) => {
 		const { statusCode } = res;
 		const contentType = res.headers['content-type'];
-
+		if (statusCode !== 200){
+			var error = new Error('Request Failed.\n' + `Status Code: ${statusCode}`);
+		}else if(!/^application\/json/.test(contentType)){
+			var error = new Error('Invalid content-type.\n' + `Expected application/json but received ${contentType}`);
+		}
 		if (error){
 			console.log(error.message+ "\n");
 			res.resume();
@@ -47,7 +51,9 @@ var RestRequest = (function () {
 
 
 app.use('/backend',function(req, res, next){
+	
 	var northwind = new RestRequest("https://reqres.in/api/users");
+	
 	var theresponse = northwind.rawdata;
 	var allowedFromConfig = envAllowedSites;
 	var allowedOrigins = allowedFromConfig.split(",");
