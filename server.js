@@ -52,9 +52,9 @@ var RestRequest = (function () {
 	return aRequest;
 }());
 
-app.use('/backend',function(req, res, next){
-	
-	var northwind = new RestRequest("https://reqres.in/api/users");
+var northwind = new RestRequest("https://reqres.in/api/users");
+
+app.use('/backend',function(req, res, next){	
 	
 	var restResponse = northwind.rawdata;
 	var allowedFromConfig = envAllowedSites;
