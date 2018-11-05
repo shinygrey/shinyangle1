@@ -61,12 +61,12 @@ app.use('/backend',function(req, res, next){
 	var allowedOrigins = allowedFromConfig.split(",");
 	
 	if((req.get('Referer') == "https://shinyangle-staging.herokuapp.com/" && req.get('Origin') == undefined)){
-		res.send("success(local):\n" + restResponse + typeof northwind.rawdata + typeof northwind);
+		res.send("success(local):\n" + "restresponse: \n"+ restResponse + "raw: \n" + northwind.rawdata);
 		next();	
 	}else if(allowedOrigins.includes(req.get('Origin'))){
 		res.header("Access-Control-Allow-Origin", req.get('Origin'));
 		res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-		res.send("success(cross):\n" + restResponse + typeof northwind.rawdata + typeof northwind);
+		res.send("success(cross):\n" + restResponse);
 		next();
 	}else{
 		res.send('not accessible');
