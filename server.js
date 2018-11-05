@@ -54,17 +54,17 @@ app.use('/backend',function(req, res, next){
 	
 	var northwind = new RestRequest("https://reqres.in/api/users");
 	
-	var theresponse = northwind.rawdata;
+	var restResponse = northwind.rawdata;
 	var allowedFromConfig = envAllowedSites;
 	var allowedOrigins = allowedFromConfig.split(",");
 	
 	if((req.get('Referer') == "https://shinyangle-staging.herokuapp.com/" && req.get('Origin') == undefined)){
-		res.send(theresponse);
+		res.send("success:\n" + restResponse);
 		next();	
 	}else if(allowedOrigins.includes(req.get('Origin'))){
 		res.header("Access-Control-Allow-Origin", req.get('Origin'));
 		res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-		res.send(theresponse);
+		res.send("success:\n" + restResponse);
 		next();
 	}else{
 		res.send('not accessible');
